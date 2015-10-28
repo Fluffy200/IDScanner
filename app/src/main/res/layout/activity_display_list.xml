@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.fluffy.idscanner.DisplayListActivity">
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rslts"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_below="@+id/update" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Checked In -  ID         - Last,    First     (Note)"
+        android:id="@+id/textView5"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text_default_material_light"
+        android:layout_above="@+id/rslts"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update List"
+        android:id="@+id/update"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/rslts"
+        android:layout_alignEnd="@+id/rslts"
+        android:onClick="updateList" />
+</RelativeLayout>

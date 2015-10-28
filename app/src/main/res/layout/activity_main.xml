@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/image"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp"
+        android:nestedScrollingEnabled="false"
+        android:layout_above="@+id/scan_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_button"
+        android:width="200dp"
+        android:height="100dp"
+        android:onClick="scan"
+        android:layout_alignBottom="@+id/last_name"
+        android:layout_centerHorizontal="true"
+        android:singleLine="false"
+        android:focusable="true"
+        android:elegantTextHeight="false"
+        android:clickable="true"
+        android:textStyle="bold"
+        android:background="@drawable/scan_button_selector" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID"
+        android:id="@+id/id"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Name"
+        android:id="@+id/fName"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Name"
+        android:id="@+id/lName"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/first_name"
+        android:width="100dp"
+        android:enabled="true"
+        android:hint="First Name"
+        android:layout_marginTop="56dp"
+        android:layout_below="@+id/fName"
+        android:layout_alignLeft="@+id/name_search"
+        android:layout_alignStart="@+id/name_search"
+        android:layout_alignRight="@+id/name_search"
+        android:layout_alignEnd="@+id/name_search" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/last_name"
+        android:width="100dp"
+        android:hint="Last Name"
+        android:layout_below="@+id/first_name"
+        android:layout_alignLeft="@+id/first_name"
+        android:layout_alignStart="@+id/first_name"
+        android:layout_alignRight="@+id/name_search"
+        android:layout_alignEnd="@+id/name_search" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search By ID"
+        android:id="@+id/id_search"
+        android:onClick="searchById"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seach By Name"
+        android:id="@+id/name_search"
+        android:onClick="searchName"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/lName"
+        android:layout_alignEnd="@+id/lName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/student_id"
+        android:hint="Student ID"
+        android:width="100dp"
+        android:layout_alignBottom="@+id/scan_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/id_search"
+        android:layout_alignEnd="@+id/id_search" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show List"
+        android:id="@+id/list"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="displaySheet" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note"
+        android:id="@+id/note"
+        android:textAlignment="center"
+        android:autoText="false"
+        android:layout_below="@+id/fName"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
