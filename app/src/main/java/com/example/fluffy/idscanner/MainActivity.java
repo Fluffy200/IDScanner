@@ -62,6 +62,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     static int dlFail;
     static boolean ulFail;
     static boolean pauseUpdate;
+    static boolean mainAct;
 
     static Context myContext;
 
@@ -84,6 +85,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         found = (ImageView)(ImageView)findViewById(R.id.image);
         multi = true;
         myContext = this;
+        mainAct = true;
 
         setEditTextFocus(firstIn, false);
         setEditTextFocus(lastIn, false);
@@ -103,7 +105,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
 
     private Runnable connectFail = new Runnable() {
         public void run() {
-            if(sheetKey != null) {
+            if(sheetKey != null && mainAct) {
                 if (ulFail) {
                     Toast.makeText(getApplicationContext(), "Connection Lost. Data may not have been saved", Toast.LENGTH_SHORT).show();
                     syncData();

@@ -6,6 +6,8 @@ import android.util.Log;
 
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.gdata.client.spreadsheet.SpreadsheetService;
+import com.google.gdata.data.spreadsheet.CellEntry;
+import com.google.gdata.data.spreadsheet.CellFeed;
 import com.google.gdata.data.spreadsheet.CustomElementCollection;
 import com.google.gdata.data.spreadsheet.ListEntry;
 import com.google.gdata.data.spreadsheet.ListFeed;
@@ -72,13 +74,13 @@ public class DownloadSheets extends AsyncTask<String, Integer, String> {
 
             WorksheetFeed worksheetFeed = service.getFeed(spreadsheets.get(index).getWorksheetFeedUrl(), WorksheetFeed.class);
             WorksheetEntry worksheet = worksheetFeed.getEntries().get(0);
+            boolean docFormat = false;
 
             URL listFeedUrl = worksheet.getListFeedUrl();
             ListFeed listFeed = service.getFeed(listFeedUrl, ListFeed.class);
 
-            boolean docFormat = false;
             for(String tag: listFeed.getEntries().get(0).getCustomElements().getTags()){
-                if(tag.equalsIgnoreCase("firstname")){
+                if(tag.equalsIgnoreCase("customername")){
                     docFormat = true;
                 }
             }
@@ -90,14 +92,14 @@ public class DownloadSheets extends AsyncTask<String, Integer, String> {
                     boolean checkedIn = false;
 
                     CustomElementCollection elements = row.getCustomElements();
-
-                    String fName = elements.getValue("firstname");
+                    String name = elements.getValue("customername");
+                    String fName = name.substring(name.indexOf(',') + 2, name.length());
                     //System.out.println(fName);
-                    String lName = elements.getValue("lastname");
+                    String lName = name.substring(0, name.indexOf(','));
                     //System.out.println(lName);
-                    String id = elements.getValue("id");
+                    String id = elements.getValue("custno");
                     //System.out.println(id);
-                    String note = elements.getValue("note");
+                    String note = elements.getValue("quantity");
                     //System.out.println(note);
                     String checkIn = elements.getValue("checkedin");
                     //System.out.println(checkI
@@ -127,7 +129,6 @@ public class DownloadSheets extends AsyncTask<String, Integer, String> {
             else{
                 MainActivity.dlFail = 2;
             }
-
         }
         catch(Exception e){
             e.printStackTrace();

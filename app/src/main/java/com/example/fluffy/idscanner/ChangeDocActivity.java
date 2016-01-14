@@ -36,6 +36,7 @@ public class ChangeDocActivity extends ActionBarActivity {
         current = (TextView) findViewById(R.id.currentDoc);
         srchBar = (EditText)findViewById(R.id.srchBar);
         keys = new ArrayList<String>();
+        MainActivity.mainAct = false;
 
         MainActivity.pauseUpdate = true;
 
@@ -89,6 +90,7 @@ public class ChangeDocActivity extends ActionBarActivity {
 
         switch (id) {
             case android.R.id.home:
+                MainActivity.mainAct  = true;
                 finish();
                 return true;
         }

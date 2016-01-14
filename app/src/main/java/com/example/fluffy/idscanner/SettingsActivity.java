@@ -23,6 +23,8 @@ public class SettingsActivity extends ActionBarActivity {
         toggle.setChecked(MainActivity.multi);
         setTitle("Settings");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        MainActivity.mainAct = false;
     }
 
 
@@ -42,6 +44,7 @@ public class SettingsActivity extends ActionBarActivity {
 
         switch (id) {
             case android.R.id.home:
+                MainActivity.mainAct = true;
                 finish();
                 return true;
         }

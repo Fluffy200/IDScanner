@@ -1,32 +1,18 @@
 package com.example.fluffy.idscanner;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.gdata.client.spreadsheet.SpreadsheetService;
-import com.google.gdata.data.spreadsheet.CellEntry;
-import com.google.gdata.data.spreadsheet.CellFeed;
-import com.google.gdata.data.spreadsheet.CustomElementCollection;
 import com.google.gdata.data.spreadsheet.ListEntry;
 import com.google.gdata.data.spreadsheet.ListFeed;
 import com.google.gdata.data.spreadsheet.SpreadsheetEntry;
 import com.google.gdata.data.spreadsheet.SpreadsheetFeed;
 import com.google.gdata.data.spreadsheet.WorksheetEntry;
 import com.google.gdata.data.spreadsheet.WorksheetFeed;
-import com.google.gdata.util.ServiceException;
 
-import org.apache.http.auth.AuthenticationException;
-
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UpdateSheets extends AsyncTask<String, Integer, String> {

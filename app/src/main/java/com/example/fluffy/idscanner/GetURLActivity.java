@@ -28,6 +28,7 @@ public class GetURLActivity extends ActionBarActivity {
         String url = intent.getStringExtra("url");
         TextView curURL = (TextView) findViewById(R.id.curURL);
         curURL.setText(url);
+        MainActivity.mainAct = false;
 
         setTitle("Change Source URL");
 
@@ -85,6 +86,7 @@ public class GetURLActivity extends ActionBarActivity {
                 if (scanContent.indexOf("docs.google.com/spreadsheets/d/") != -1) {
                     writeURL(scanContent);
                     //System.out.println("done");
+                    MainActivity.mainAct = true;
                     finish();
                 }
                 else{

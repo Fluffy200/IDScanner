@@ -58,7 +58,8 @@ public class DisplayListActivity extends ActionBarActivity {
     }
 
     public void updateList(View v){
-        data.clear();
+        Intent intent = this.getIntent();
+        ArrayList<String> results = new ArrayList<String>();
         for(Student each: MainActivity.data){
             String dat;
             if(each.getChecked()){
@@ -70,11 +71,10 @@ public class DisplayListActivity extends ActionBarActivity {
             if(each.getNote() != null){
                 dat += " (" + each.getNote() + ")";
             }
-            data.add(dat);
-            System.out.println(dat);
+            results.add(dat);
         }
-        myAdapter.clear();
-        myAdapter.addAll(data);
-        myList.setAdapter(myAdapter);
+        intent.putExtra("data", results);
+        startActivity(this.getIntent());
+        this.finish();
     }
 }
