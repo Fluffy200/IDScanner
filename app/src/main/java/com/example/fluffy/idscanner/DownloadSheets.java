@@ -99,10 +99,10 @@ public class DownloadSheets extends AsyncTask<String, Integer, String> {
                     //System.out.println(lName);
                     String id = elements.getValue("custno");
                     //System.out.println(id);
-                    String note = elements.getValue("quantity");
+                    String note = elements.getValue("guest");
                     //System.out.println(note);
                     String checkIn = elements.getValue("checkedin");
-                    //System.out.println(checkI
+                    //System.out.println(checkIn);
 
                     if (checkIn != null && checkIn.equals("Y")) {
                         checkedIn = true;

@@ -83,7 +83,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         lastIn = (EditText)findViewById(R.id.last_name);
         note = (TextView)findViewById(R.id.note);
         found = (ImageView)(ImageView)findViewById(R.id.image);
-        multi = true;
+        multi = false;
         myContext = this;
         mainAct = true;
 
